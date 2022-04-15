@@ -1,14 +1,16 @@
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
+import Layout from "./pages/ResponsiveBar";
 import Home from "./pages/Home";
 import Second from "./pages/Second";
 import Increment from "./pages/IncrementPage";
 import Decrement from "./pages/DecrementPage";
+import { CounterProvider } from "./CounterContext";
 
 
 export default function App() {
   return (
+    <CounterProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -19,6 +21,7 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </CounterProvider>
   );
 }
 

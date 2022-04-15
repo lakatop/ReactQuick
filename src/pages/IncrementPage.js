@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { CounterContext } from '../CounterContext.js';
+import { Button } from "@mui/material";
 
 
 const Increment = () => {
   const {count, setCount} = useContext(CounterContext);
   return (
-    <div className="App1">
+    <div className="App">
       <h1>Increment</h1>
-      <button onClick={()=>{setCount(count + 1)}}>{count}</button>
+      <Button variant="contained" onClick={()=>{setCount(count + 1)}}>{count}</Button>
     </div>
   );
   };
